@@ -53,18 +53,13 @@ struct danhsach {
 			ds.arr[i] = ds.arr[i + 1];
 		}
 		ds.n--;
-		cout << "delete successfully" << endl;
 	}
 
 	void delete1NumberinArr(danhsach& ds, int x) {
 		for (int i = 0; i < ds.n; i++) {
 			if (ds.arr[i] == x) {
-				for (int j = i; j < ds.n; j++) {
-					if (ds.arr[j] == x) {
-						delete1ItemInArr(ds, j);
-					}
-				}
-				break;
+				delete1ItemInArr(ds, i);
+				i--;
 			}
 		}
 	}

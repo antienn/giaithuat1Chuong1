@@ -37,25 +37,30 @@ int main() {
 			cout << "moi ban nhap so de them vao dau mang" << endl;
 			cin >> tmp;
 			ds.add1ItemInArr(ds, tmp, 0);
+			ds.output(ds);
 			break;
 		}
 		case 5:{
 			cout << "moi ban nhap so de them vao cuoi mang" << endl;
 			cin >> tmp;
 			ds.add1ItemInArr(ds, tmp, ds.n);
+			ds.output(ds);
 		}
 		case 6:{
 			ds.delete1ItemInArr(ds, 0);
+			ds.output(ds);
 			break;
 		}
 		case 7:{
-			ds.delete1ItemInArr(ds, ds.n);
+			ds.delete1ItemInArr(ds, ds.n); 
+			ds.output(ds);
 			break;
 		}
 		case 8:{
 			cout << "moi ban nhap vi tri  ban muon xoa" << endl;
 			cin >> tmp;
 			ds.delete1ItemInArr(ds, tmp);
+			ds.output(ds);
 			break;
 		}
 		case 9:{
@@ -64,17 +69,20 @@ int main() {
 			cout << " nhap so ban muon them" << endl;
 			cin >> tmp1;
 			ds.add1ItemInArr(ds, tmp1, tmp);
+			ds.output(ds);
 			break;
 		}
 		case 10:{
 			cout << "nhap so ban muon xoa tai vi tri dau tien" << endl;
 			cin >> tmp1;
 			ds.delete1ItemInArr(ds, ds.findFirstIndex(ds,tmp1));
+			ds.output(ds);
 		}
 		case 11:{
 			cout << "nhap so ban muon xoa tat ca trong mang" << endl;
 			cin >> tmp1;
 			ds.delete1NumberinArr(ds, tmp1);
+			ds.output(ds);
 			break;
 		}
 		case 12:{
