@@ -100,10 +100,24 @@ number* deleteIndex(number* l,int index) {
 		return l;
 	}
 }
+bool checkNum(number* l, int x) {
+	number* p = l;
+	while (p != NULL) {
+		if (p->integer == x) {
+			return true;
+		}
+		p = p->next;
+	}
+	return false;
+}
 
 number* deleteNumber(number* l, int num) {
-	number* q = NULL;
 	number* p = l;
+	number* q = l;
+	if (p->integer == num) {
+		l = deleteStart(l);
+		return l;
+	}
 	while (p->next != NULL && p->integer != num) {
 		q = p;
 		p = p->next;
@@ -113,15 +127,11 @@ number* deleteNumber(number* l, int num) {
 	return l;
 }
 number* deleteAllNumber(number* l, int num) {
-	number* q = NULL;
-	number* p = l;
-	while (p->next != NULL) {
-		q = p;
-		p = p->next;
-		if (p->integer == num) {
-			q->next = p->next;
-			delete p;
+	while (true) {
+		if (!checkNum(l, num)) {
+			break;
 		}
+		l = deleteNumber(l,num);
 	}
 	return l;
 }
@@ -165,6 +175,7 @@ int main() {
 		cin >> choose;
 		switch (choose) {
 		case 1: {
+			system("cls");
 			printList(first);
 			break;
 		}
